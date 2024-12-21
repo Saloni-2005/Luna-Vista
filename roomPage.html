@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Rooms</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #0f172a;
+            background-color: #f8fafc;
+        }
+        .container {
+            padding: 20px;
+            background-color: #64748b;
+        }
+        .header {
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            position: relative; 
+            padding: 30px;
+            background-color: #0f1a2c;
+            color: white;
+        }
+        .room {
+            border: 1px solid #64748b;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            position: relative;
+            background-color: white;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .room img {
+            width: 150px;
+            height: auto;
+            border-radius: 5px;
+        }
+        .room-content {
+            flex-grow: 1;
+        }
+        .room-content h2 {
+            margin: 0 0 10px;
+            font-family:"Playfair Display", "serif";
+            color: #0f172a;
+        }
+        .room-content p {
+            margin: 5px 0;
+            color: #64748b;
+        }
+        .room-content span {
+            font-weight: bold;
+            color: #0f1a2c;
+        }
+        
+        .room .button.book-now {
+            top: 45px; 
+            background-color: #f6ac0f;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 10px 15px;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .room .button.book-now:hover {
+            background-color: rgb(248, 142, 13);
+        }
+        
+        .home-link {
+            position: absolute;
+            left: 10px;
+            padding: 8px 20px;
+            background-color: #f6ac0f;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: background-color 0.3s;
+        }
+        .home-link:hover {
+            background-color: rgb(248, 142, 13)
+        }
+        .header h1 {
+            margin: 0;
+            font-family: "Playfair Display",serif;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="index.html" class="home-link">Home</a>
+        <h1>Our Rooms</h1>
+    </div>
+    <div class="container">
+        <div class="room">
+            <img src="background.jpg" alt="Single Room - Normal">
+            <div class="room-content">
+                <h2>Cozy Solo Retreat</h2>
+                <p>Perfect for solo travelers, this cozy room offers all the essentials for a comfortable stay.</p>
+                <p>Price: <span>1K per night</span></p>
+            </div>
+            <a href="#" class="button book-now">Book Now</a>
+        </div>
+
+        <div class="room">
+            <img src="single_luxury.jpg" alt="Single Room - Luxury">
+            <div class="room-content">
+                <h2>Elite Solo Haven</h2>
+                <p>Enjoy a luxurious experience with added amenities and plush furnishings.</p>
+                <p>Price: <span>1.5K per night</span></p>
+            </div>
+            <a href="#" class="button book-now">Book Now</a>
+        </div>
+
+        <div class="room">
+            <img src="double_normal.jpg" alt="Double Room - Normal">
+            <div class="room-content">
+                <h2>Classic Duo Escape</h2>
+                <p>A spacious room ideal for two guests, equipped with standard features for a relaxing stay.</p>
+                <p>Price: <span>2K per night</span></p>
+            </div>
+            <a href="#" class="button book-now">Book Now</a>
+        </div>
+
+        <div class="room">
+            <img src="double_luxury.jpg" alt="Double Room - Luxury">
+            <div class="room-content">
+                <h2>Grand Couple’s Retreat</h2>
+                <p>Indulge in luxury with elegant decor and superior amenities for two.</p>
+                <p>Price: <span>2.5K per night</span></p>
+            </div>
+            <a href="#" class="button book-now">Book Now</a>
+        </div>
+
+        <div class="room">
+            <img src="family_4_normal.jpg" alt="Family Room (4 Members) - Normal">
+            <div class="room-content">
+                <h2>Comfort Family Hub (4 Guests)</h2>
+                <p>An affordable option for families, this room accommodates up to four members comfortably.</p>
+                <p>Price: <span>3.5K per night</span></p>
+            </div>
+            <a href="#" class="button book-now">Book Now</a>
+        </div>
+
+        <div class="room">
+            <img src="family_4_luxury.jpg" alt="Family Room (4 Members) - Luxury">
+            <div class="room-content">
+                <h2> Luxury Family Suite (4 Guests)</h2>
+                <p>Designed for a luxurious family experience, this room offers space and elegance for four.</p>
+                <p>Price: <span>5K per night</span></p>
+            </div>
+            <a href="#" class="button book-now">Book Now</a>
+        </div>
+
+        <div class="room">
+            <img src="family_6_normal.jpg" alt="Family Room (6 Members) - Normal">
+            <div class="room-content">
+                <h2>Spacious Family Hub (6 Guests)</h2>
+                <p>A great choice for larger families, this room comfortably accommodates up to six members.</p>
+                <p>Price: <span>6K per night</span></p>
+            </div>
+            <a href="#" class="button book-now">Book Now</a>
+        </div>
+
+        <div class="room">
+            <img src="family_6_luxury.jpg" alt="Family Room (6 Members) - Luxury">
+            <div class="room-content">
+                <h2> Premium Family Suite (6 Guests)</h2>
+                <p>Spacious and opulent, this room is perfect for larger families seeking a luxurious stay.</p>
+                <p>Price: <span>8K per night</span></p>
+            </div>
+            <a href="#" class="button book-now">Book Now</a>
+        </div>
+    </div>
+    <script src="room.js"></script>
+</body>
+</html>
