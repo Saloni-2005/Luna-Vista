@@ -82,7 +82,7 @@ function showBookingPopup(roomTitle) {
     const bookingForm = document.getElementById('bookingForm');
     bookingForm.addEventListener('submit', event => {
         event.preventDefault();
-        console.log("Submit event triggered"); // Debugging statement
+        console.log("Submit event triggered"); 
     
         const name = document.getElementById('name').value;
         const email = document.getElementById('email').value;
@@ -94,7 +94,7 @@ function showBookingPopup(roomTitle) {
         console.log("Form values retrieved:", { name, email, contact, checkin, checkout, numGuests });
     
         const today = new Date();
-        today.setHours(0, 0, 0, 0); // Set time to midnight for date comparison
+        today.setHours(0, 0, 0, 0); 
     
         if (checkin <= today) {
             alert('Check-in date must be after today.');
@@ -111,13 +111,11 @@ function showBookingPopup(roomTitle) {
         localStorage.setItem('name', name);
         localStorage.setItem('contact', contact);
         localStorage.setItem('numGuests', numGuests);
-
-        alert(`Hello ${name}! Welcome to Luna Vista, Thank you!`);
-        console.log("Welcome alert triggered");
     
         localStorage.setItem('hasBookedBefore', 'true');
     
-        if (confirm(`Confirm booking for ${roomTitle} under the name ${name} for ${numGuests} guest(s)?`)) {
+        if (confirm(`Hello ${name}! Welcome to Luna Vista, Thank you! 
+Click "OK" to confirm your booking.`)) {
             alert('Your booking has been confirmed!');
             console.log("Booking confirmed");
         } else {
@@ -126,15 +124,14 @@ function showBookingPopup(roomTitle) {
     
         overlay.remove();
         document.body.style.overflow = ''; 
-    });
-        
+    });    
 }
 
 function updateGuestDropdown(roomTitle) {
     const numGuestsDropdown = document.getElementById('numGuests');
     numGuestsDropdown.innerHTML = '';
     let maxGuests = 1;
-    if (roomTitle.includes('Double')) {
+    if (roomTitle.includes('Classic Duo Escape')||roomTitle.includes('Grand Couple’s Retreat')) {
         maxGuests = 2;
     } else if (roomTitle.includes('Family Hub (4 Guests)') || roomTitle.includes('Family Suite (4 Guests)')) {
         maxGuests = 4;
@@ -154,29 +151,7 @@ function updateGuestDropdown(roomTitle) {
 
 function updateGuestDetails() {
     const numGuests = parseInt(document.getElementById('numGuests').value, 10);
-    const guestDetailsContainer = document.getElementById('guestDetails');
-
-    guestDetailsContainer.innerHTML = '';
-
-    const guestDiv = document.createElement('div');
-    guestDiv.classList.add('form-row');
-    guestDiv.innerHTML = `
-        <h4>Guest Details</h4>
-        <label for="gender">Gender:</label>
-        <select id="gender" name="gender" required>
-            <option value="male">Male</option>
-            <option value="female">Female</option>
-            <option value="other">Other</option>
-        </select>
-
-        <label for="category">Category:</label>
-        <select id="category" name="category" required>
-            <option value="child">Child</option>
-            <option value="adult">Adult</option>
-            <option value="old">Old</option>
-        </select>
-    `;
-    guestDetailsContainer.appendChild(guestDiv);
+    console.log(`Number of guests updated: ${numGuests}`);
 }
 
 const link = document.createElement('link');

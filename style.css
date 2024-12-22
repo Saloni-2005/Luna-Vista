@@ -156,6 +156,7 @@
     background-position: center center;
     background-size: 100%;
     background-repeat: no-repeat;
+    height:620px;
   }
   
   .header__container .section__subheader {
@@ -170,6 +171,11 @@
     font-family: var(--header-font);
     color: var(--white);
   }
+
+  .gap{
+    background-color: #0f1a2c;
+    height: 10vh;
+  }
   
   .booking {
     background-color: var(--primary-color);
@@ -181,6 +187,7 @@
     display: grid;
     gap: 2rem;
   }
+
   
   .input__group {
     display: grid;
