@@ -24,20 +24,24 @@ The **Hotel Reservation System** is a console-based application designed to mana
 - Prompts to check room availability, make reservations, and view booking details.
 - Input validation for room type, dates, and booking information.
 
-  ![Screenshot (86)](https://github.com/user-attachments/assets/b4fdaa89-b066-44dd-9829-00d52d4b47f8)
+ 
+
+   ![Screenshot 2024-12-27 001421](https://github.com/user-attachments/assets/fb759d60-2f0d-4282-a9b7-ad1888d11374)
 
 ### Room Availability
 - Displays a list of available rooms based on the selected date range.
 - Includes room types (e.g., single, double, suite) with their prices.
 - Filters rooms based on availability and user preferences.
-![Screenshot (88)](https://github.com/user-attachments/assets/122e6f02-2516-4cdc-93c7-30a8e97ca46a)
+
+ ![Screenshot (86)](https://github.com/user-attachments/assets/b4fdaa89-b066-44dd-9829-00d52d4b47f8)
 
 ### Booking Process
 - Reserve a room from the list of available options.
 - Collects guest details: name, contact number, check-in, and check-out dates.
 - Confirms booking and provides a unique reference number.
 - Allows viewing and canceling existing bookings.
-  ![Screenshot 2024-12-27 001421](https://github.com/user-attachments/assets/fb759d60-2f0d-4282-a9b7-ad1888d11374)
+
+![Screenshot (88)](https://github.com/user-attachments/assets/122e6f02-2516-4cdc-93c7-30a8e97ca46a)
 
 ### Data Storage
 - Saves room availability and booking details in Local Storage or Session Storage for persistence during the session.
