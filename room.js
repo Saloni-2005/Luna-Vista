@@ -96,7 +96,6 @@ class RoomAvailabilityManager {
 
 const availabilityManager = new RoomAvailabilityManager();
 
-// Event listener for book now buttons
 document.querySelectorAll('.button.book-now').forEach(button => {
     button.addEventListener('click', event => {
         event.preventDefault();
@@ -161,14 +160,12 @@ function showBookingPopup(roomTitle) {
     document.body.appendChild(overlay);
     document.body.style.overflow = 'hidden';
 
-    // Setup close button
     const closeButton = popup.querySelector('.close-button');
     closeButton.addEventListener('click', () => {
         overlay.remove();
         document.body.style.overflow = '';
     });
 
-    // Setup overlay click to close
     overlay.addEventListener('click', event => {
         if (event.target === overlay) {
             overlay.remove();
@@ -176,10 +173,8 @@ function showBookingPopup(roomTitle) {
         }
     });
 
-    // Setup number of guests dropdown
     updateGuestDropdown(roomTitle);
 
-    // Setup date change handlers
     const checkinInput = document.getElementById('checkin');
     const checkoutInput = document.getElementById('checkout');
     const statusText = popup.querySelector('.status-text');
@@ -201,7 +196,6 @@ function showBookingPopup(roomTitle) {
     }
 
     checkinInput.addEventListener('change', () => {
-        // Update minimum date for checkout
         const checkinDate = new Date(checkinInput.value);
         checkinDate.setDate(checkinDate.getDate() + 1);
         checkoutInput.min = checkinDate.toISOString().split('T')[0];
@@ -209,8 +203,7 @@ function showBookingPopup(roomTitle) {
     });
 
     checkoutInput.addEventListener('change', updateAvailabilityStatus);
-
-    // Setup form submission
+    
     const bookingForm = document.getElementById('bookingForm');
     bookingForm.addEventListener('submit', event => {
         event.preventDefault();
@@ -224,8 +217,7 @@ function showBookingPopup(roomTitle) {
         const gender = document.getElementById('gender').value;
         const category = document.getElementById('category').value;
         const requests = document.getElementById('requests').value;
-
-        // Validate dates
+        
         const today = new Date();
         today.setHours(0, 0, 0, 0);
         const checkinDate = new Date(checkin);
@@ -241,13 +233,11 @@ function showBookingPopup(roomTitle) {
             return;
         }
 
-        // Check availability
         if (!availabilityManager.checkAvailability(roomTitle, checkin, checkout)) {
             alert('Sorry, this room is not available for the selected dates.');
             return;
         }
 
-        // Book the room
         const bookingDetails = {
             name,
             email,
@@ -261,7 +251,6 @@ function showBookingPopup(roomTitle) {
         const bookingId = availabilityManager.bookRoom(roomTitle, checkin, checkout, bookingDetails);
 
         if (bookingId) {
-            // Store booking info
             const userBookings = JSON.parse(localStorage.getItem('userBookings') || '[]');
             userBookings.push({
                 bookingId,
@@ -272,7 +261,6 @@ function showBookingPopup(roomTitle) {
             });
             localStorage.setItem('userBookings', JSON.stringify(userBookings));
 
-            // Store user info for future use
             localStorage.setItem('name', name);
             localStorage.setItem('email', email);
             localStorage.setItem('contact', contact);
@@ -308,7 +296,6 @@ function updateGuestDropdown(roomTitle) {
     }
 }
 
-// Add CSS link
 const link = document.createElement('link');
 link.rel = 'stylesheet';
 link.href = 'room.css';
