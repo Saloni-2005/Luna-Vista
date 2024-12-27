@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
      loginbtn.addEventListener("submit", (e)=>{
 
           event.preventDefault();
-          window.location.href = "./index.html";
+          window.location.href = "https://saloni-2005.github.io/Luna-Vista/";
          
      })
     
