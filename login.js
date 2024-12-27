@@ -7,9 +7,9 @@ document.addEventListener("DOMContentLoaded", () => {
      loginbtn.addEventListener("submit", (e)=>{
 
           event.preventDefault();
-          window.location.href = "/index.html";
+          window.location.href = "./index.html";
          
-     }
+     })
     
 
     if (signupForm) {
