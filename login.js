@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             if (storedUser && storedUser.password === password) {
                 alert("Login successful!");
-               window.location.href = "https://saloni-2005.github.io/Luna-Vista/index.html"; 
+               window.location.href = "./index.html"; 
             } else {
                 alert("Invalid email or password.");
             }
