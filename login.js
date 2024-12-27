@@ -2,6 +2,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const signupForm = document.getElementById("signupForm");
     const loginForm = document.getElementById("loginForm");
 
+    const loginbtn=document.getElementById("loginsubmit");
+
+     loginbtn.addEventListener("submit", (e)=>{
+
+          event.preventDefault();
+          window.location.href = "/index.html";
+         
+     }
+    
+
     if (signupForm) {
         signupForm.addEventListener("submit", (event) => {
             event.preventDefault();
